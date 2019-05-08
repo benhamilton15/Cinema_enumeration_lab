@@ -31,7 +31,12 @@ Cinema.prototype.longEnough = function (length) {
 
 Cinema.prototype.totalRuntime = function () {
   const lengths = this.films.map(film => film.length)
-  const result = lengths.reduce((runningTotal, currentvalue) => runningTotal + currentvalue)
+  const result = lengths.reduce((runningTotal, currentvalue) => runningTotal + currentvalue, 0)
+  return result
+}
+
+Cinema.prototype.filterByProperty = function (propertyName, value) {
+  const result = this.films.filter(film => film[propertyName] === value)
   return result
 }
 
