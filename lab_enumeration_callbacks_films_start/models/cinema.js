@@ -24,4 +24,15 @@ Cinema.prototype.filmsFromYear = function (year) {
 
 }
 
+Cinema.prototype.longEnough = function (length) {
+  const result = this.films.every(film => film.length > length)
+  return result
+}
+
+Cinema.prototype.totalRuntime = function () {
+  const lengths = this.films.map(film => film.length)
+  const result = lengths.reduce((runningTotal, currentvalue) => runningTotal + currentvalue)
+  return result
+}
+
 module.exports = Cinema;
