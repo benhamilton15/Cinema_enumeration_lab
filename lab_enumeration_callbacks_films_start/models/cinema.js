@@ -17,6 +17,8 @@ Cinema.prototype.findFilmGenre = function (genre) {
   return result
 }
 
+
+// .some would work well here
 Cinema.prototype.filmsFromYear = function (year) {
   const years = this.films.map(film => film.year)
   const result = years.includes(year)
@@ -31,7 +33,7 @@ Cinema.prototype.longEnough = function (length) {
 
 Cinema.prototype.totalRuntime = function () {
   // const lengths = this.films.map(film => film.length)
-  const result = this.films.reduce((runningTotal, currentvalue) => runningTotal + currentvalue.length, 0)
+  const result = this.films.reduce((runningTotal, film) => runningTotal + film.length, 0)
   return result
 }
 
