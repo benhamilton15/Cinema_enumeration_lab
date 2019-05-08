@@ -30,8 +30,8 @@ Cinema.prototype.longEnough = function (length) {
 }
 
 Cinema.prototype.totalRuntime = function () {
-  const lengths = this.films.map(film => film.length)
-  const result = lengths.reduce((runningTotal, currentvalue) => runningTotal + currentvalue, 0)
+  // const lengths = this.films.map(film => film.length)
+  const result = this.films.reduce((runningTotal, currentvalue) => runningTotal + currentvalue.length, 0)
   return result
 }
 
